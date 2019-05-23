@@ -3,15 +3,20 @@
 <head> 
     <meta charset="UTF-8">
     <script type="text/javascript" src="../js/validacion.js"></script>
-    <link rel="stylesheet" href="styles/style.css" type="text/css"/>
+    <link rel="stylesheet" href="CSS/principal.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Satisfy&display=swap" rel="stylesheet">
+
 </head> 
 <body> 
     
-    <!-- ../controladores/crear_usuario.php      onsubmit="return validarCamposObligatorios()"   action="../controladores/crear_usuario.php" -->
-
-    <a href='login.html'>Tienes ya una cuenta? ir a Iniciar Sesion</a>
-
     <form id="nuevo_usuario" method="POST" action="../controladores/crear_usuario.php" enctype="multipart/form-data" >
+        
+        <legend class="legend1" > <h1>Sign up</h1></legend>
+        <legend class="legend" ><a href='login.html'><h1> or Sign in</h1></a></legend>
+        <br>
+
  
         <label for="nombres">Nombres (*)</label> 
         <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres..." required>
@@ -47,9 +52,9 @@
         <br>
         -->
 
-        <input type="submit" id="crear" name="crear" value="Aceptar" /> 
-        <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />     
-        
+        <button type="submit" id="crear" name="crear" value="Aceptar">Aceptar</button>
+        <button type="reset" id="cancelar" name="cancelar" value="Cancelar">Cancelar</button>
+      
     </form>     
  
 </body> 
