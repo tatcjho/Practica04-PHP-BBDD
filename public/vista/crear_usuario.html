@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <script type="text/javascript" src="../js/validacion.js"></script>
     <link rel="stylesheet" href="styles/style.css" type="text/css"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css" />
 </head> 
 <body> 
+
+        <section class="m-box--sign-in" role="main">
+            <header class="m-box--box-sized">
+                <h1>
+                Sign Up <span>or <a href="login.html">sign in </a></span>
+                </h1>
+                <a class="m-link--close" href="#">x </a>
+            </header>
+
+    <!--
     <section class="form_wrap">
         <section class="contact_info">
             <section class="info_title">
@@ -18,32 +31,46 @@
                     <p><span class="fa fa-mobile"></span> +1(585) 902-8665</p>
             </section>
         </section>
-        <form id="nuevo_usuario" class="form_contact" method="POST" onsubmit="return validarCamposObligatorios()" action="../controladores/crear_usuario.php" enctype="multipart/form-data" >
-            <div class="user_info"></div>
+    -->
+        <form id="nuevo_usuario" class="m-form--sign-in" method="POST" onsubmit="return validarCamposObligatorios()" action="../controladores/crear_usuario.php" enctype="multipart/form-data" >
+            
+                
+            
 
-            <label for="nombres">Nombres (*)</label> 
-            <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres..." onkeyup="return validarLetras()">
-            <span id="mensajeNombres" class="error"> </span>
-            <br> 
+            <fieldset>
+                    <input type="text" id="nombres" name="nombres" value="" placeholder="Nombres" onkeyup="return validarLetras()">
+                    <span id="mensajeNombres" class="error"> </span>
+                    <br>
+            </fieldset>
+          
  
-            <label for="apellidos">Apelidos (*)</label> 
-            <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ingrese sus dos apellidos..." onkeyup="return validarLetras()">
-            <span id="mensajeApellidos" class="error"> </span>
-            <br>
+            <fieldset>
+                    <input type="text" id="apellidos" name="apellidos" value="" placeholder="Apellidos" onkeyup="return validarLetras()">
+                    <span id="mensajeApellidos" class="error"> </span>
+                    <br>
+            </fieldset>
+            
  
-            <label for="correo">Correo electrónico (*)</label> 
-            <input type="email" id="correo" name="correo" value="" placeholder="Ingrese su correo electrónico ..." >
-            <span id="mensajeCorreo" class="error"> </span>
-            <br> 
- 
-            <label for="contrasena">Contraseña (*)</label> 
-            <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña ..." >
-            <span id="mensajeContrasena" class="error"> </span>
-            <br>
-
-            <label for="foto">Foto de perfil</label> 
-            <input type="file" id="foto" name="foto" value="" placeholder="foto" > 
-            <br> 
+            <fieldset>
+                    
+                    <input type="email" id="correo" name="correo" value="" placeholder="Email" >
+                    <span id="mensajeCorreo" class="error"> </span>
+                    <br> 
+            </fieldset>
+           
+            <fieldset>
+                  
+                    <input type="password" id="contrasena" name="contrasena" value="" placeholder="Contraseña" >
+                    <span id="mensajeContrasena" class="error"> </span>
+                    <br>
+            </fieldset>
+            
+            <fieldset>
+                    <label for="foto">Foto de perfil</label> 
+                    <input type="file" id="foto" name="foto" value="" placeholder="foto" > 
+                    <br> 
+            </fieldset>
+            
  
             <input type="submit" id="crear" name="crear" value="Aceptar" /> 
             <input type="reset" id="cancelar" name="cancelar" value="Cancelar" /> 
@@ -55,9 +82,6 @@
 </html> 
 
     
-    <!-- ../controladores/crear_usuario.php      onsubmit="return validarCamposObligatorios()"    -->
-
-    <a href='login.html'>Tienes ya una cuenta? ir a Iniciar Sesion</a>
 
  
             
