@@ -4,15 +4,22 @@
 <head> 
     <meta charset="UTF-8"> 
     <script type="text/javascript" src="../js/validacion.js"></script>
-    <link rel="stylesheet" href="styles/style.css" type="text/css"/>
+    <link rel="stylesheet" href="CSS/principal.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Satisfy&display=swap" rel="stylesheet">
 
     
     <title>Iniciar sesión</title>
 </head> 
     <body> 
-        <a href='crear_usuario.html'>No tienes una cuenta? ir a Crear Cuenta</a>  
+        
+       
         <br>       
         <form id="formulario01" method="POST" onsubmit="return validarCamposObligatorios()" action="../controladores/login.php"> 
+            
+            <legend class="legend1" > <h1>Sign in</h1></legend>
+            <legend class="legend" ><a href='crear_usuario.html'><h1> or Sign up</h1></a></legend>
+            <br>
+            
             <label for="correo">Correo electrónico </label> 
             <input type="text" id="correo" name="correo" value="" placeholder="Ingrese el correo ..."/> 
             <br> 
