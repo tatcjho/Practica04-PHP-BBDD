@@ -48,7 +48,7 @@
     <meta charset="UTF-8">
     <script type="text/javascript" src="../js/validacion.js"></script>
     <title>Correo: <?php echo $nombres ?> <?php echo $apellidos ?> </title> 
-    <link rel="stylesheet" href="../../public/vista/styles/style.css" type="text/css"/>  
+    <link rel="stylesheet" href="../../public/vista/CSS/gen.css" type="text/css"/>  
 </head> 
 <body> 
  
@@ -96,7 +96,14 @@
         </div>
 
     </section>
-
+    <footer>
+        &#8226; &nbsp; Tatiana Domenica Cardenas Jho &nbsp; &#8226; 
+        &nbsp; Universidad Politécnica Salesiana &nbsp; &#8226;
+        <a href="mailto:tcardenasj@est.ups.edu.ec">tcardenasj@est.ups.edu.ec</a> &nbsp; &#8226;
+        <a href="tel:+593998301194">(099) 983-1194</a> &#8226;
+        <br>
+        &#8226; &nbsp; &#9400; Todos los derechos reservados. &nbsp; &#8226;
+    </footer>
  
 </body> 
 </html> 
