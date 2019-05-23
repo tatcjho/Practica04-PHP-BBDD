@@ -1,382 +1,240 @@
-.error {
-    color: red;
-    font-size: 8px;
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.menu {
-    width: 50%;
-    border: 1px solid blue;
+html {
+  background: transparent url("http://fc00.deviantart.net/fs38/f/2008/346/c/5/Aurora_Blur_by_SkateAddiction.png") top center no-repeat;
+  background-size: 100%;
 }
 
-div.img {
-    display:table;
-    float: right;
-    margin-right: 8%;
-    margin-top: -1%;
-}
-div.img img {
-    margin:0;
-    padding:0;
-    width: 160px;
-    height: 160px;
-    
-}
-div.img span {
-    line-height:normal;
-    font-size:11px;
-    display:table-footer-group;
-    margin:0;
-    background:#772626;
-    color:white;
-    padding:5px;
-    text-align:center;
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Lato", sans-serif;
+  font-size: 0.85em;
 }
 
-img {
-    margin:0;
-    padding:0;
-    width: 160px;
-    height: 160px;
+.m-box--box-sized, input[type="text"], input[type="email"], input[type="password"] {
+  box-sizing: border-box;
 }
 
-.correo, th, td {
-    border: 1px solid black;
-    padding: 2px;
+.m-box--sign-in {
+  width: 450px;
+  padding: 0 0 0 100px;
+  min-height: 500px;
+  margin: 4em auto 0;
+  background: transparent url("http://farm8.staticflickr.com/7395/8892417152_c86b705b30_b.jpg") -250px center no-repeat;
 }
 
-#dato, td {
-    text-align: center !important;
+header {
+  background: #43b1aa;
+  width: 450px;
+  overflow: hidden;
+  position: relative;
+  padding: 3em 4em 3.5em 4em;
+}
+header h1 {
+  font-size: 3em;
+  font-weight: 300;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+header span {
+  font-size: 0.35em;
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
 }
 
-.center, .correo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+.m-link--close {
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  border-bottom: 0 none;
+  font-weight: 700;
+  font-size: 2em;
+  color: #43b1aa;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 35px;
+  display: block;
+  position: absolute;
+  top: 35%;
+  right: 0;
 }
 
-footer {
-    clear: both;
-    color: black;
-    text-align: center;
-    width: 100%;
-    padding: 1px;
-    float: inline-end;
+.m-form--sign-in {
+  background: #fff;
+  padding: 1.5em 3em 1.3em 3em;
+}
+.m-form--sign-in div {
+  margin: 2.5em 0 0;
+}
+.m-form--sign-in div a {
+  color: #ccc;
+  font-size: 0.8em;
+  float: right;
+  margin: 0 0 0.5em;
 }
 
-.mensaje {
-    vertical-align: top; 
-    height:200px; 
-    width: 730px; 
-    text-align: left;
-}
-
-.modificar {
-    border: 0 !important;
-}
-
-
-
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
-    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
-  
-  :focus{
-      outline: none;
-  }
-  
-  body{
-      background: #DBDBDB;
-      font-family: 'Open sans'
-  }
-  
-  /* FORMULARIO ===============================*/
-  
-  .form_wrap{
-      width: 850px;
-      height: 780px;
-      margin: 50px auto;
-      margin-top: 50px;
-      display: flex;
-      overflow: hidden;
-  
-      border-radius: 10px;
-      background: #fff;
-      box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-  }
-  
-  /* Informacion de Contacto*/
-  
-  .contact_info:before{
-      content: '';
-      width: 100%;
-      height: 100%;
-  
-      position: absolute;
-      top: 0;
-      left: 0;
-  
-      background: #4091EC;
-      opacity: 0.92;
-  }
-  
-  .contact_info{
-      width: 38%;
-      position: relative;
-  
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  
-      background-image: url('../fondo.jpg');
-      background-size: cover;
-      background-position: center center;
-  }
-  
-  .info_title,
-  .info_items{
-      position: relative;
-      z-index: 2;
-      color: #fff;
-  }
-  
-  .info_title{
-      margin-bottom: 60px;
-  }
-  
-  .info_title span{
-      font-size: 100px;
-      display: block;
-      text-align: center;
-      margin-bottom: 15px;
-  }
-  
-  .info_title h2{
-      font-size: 35px;
-      text-align: center;
-  }
-  
-  .info_items p{
-      display: flex;
-      align-items: center;
-  
-      font-size: 16px;
-      font-weight: 600;
-  
-      margin-bottom: 10px;
-  }
-  
-  .info_items p:nth-child(1) span{
-      font-size: 30px;
-      margin-right: 10px;
-  }
-  
-  .info_items p:nth-child(2) span{
-      font-size: 50px;
-      margin-right: 15px;
-      margin-left: 4px;
-  }
-  
-  form.form_contact{
-      width: 62%;
-      padding: 30px 40px;
-  }
-  
-  form.form_contact h2{
-      font-size: 25px;
-      font-weight: 600;
-      color: #303030;
-  
-      margin-bottom: 30px;
-  }
-  
-  form.form_contact .user_info{
-      display: flex;
-      flex-direction: column;
-  }
-  
-  form.form_contact label{
-      font-weight: 600;
-  }
-  
-  form.form_contact label,
-  form.form_contact input,
-  form.form_contact textarea{
-      display: block;
-  }
-  
-  form.form_contact input,
-  form.form_contact textarea{
-      width: 100%;
-      padding: 8px 0px 5px;
-      margin-bottom: 20px;
-      
-      border: none;
-      border-bottom: 2px solid #D1D1D1;
-  
-      font-family: 'Open sans';
-      color: #5A5A5A;
-      font-size: 14px;
-      font-weight: 400;
-  }
-  
-  form.form_contact textarea{
-      max-width: 100%;
-      max-height: 90px;
-  }
-  
-  form.form_contact input[type="button"]{
-      width: 180px;
-      background: #4091EC;
-      padding: 10px;
-      border: none;
-      border-radius: 25px;
-  
-      align-self: flex-end;
-  
-      color: #fff;
-      font-family: 'Open sans';
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-  }
-  
-  form.form_contact input[type="button"]:hover{
-      background: #3371B6;
-  }
-  
-  /* MENSAJE MODAL*/
-  
-  .modal_wrap{
-      width: 100%;
-      height: 100vh;
-      background: rgba(0,0,0,0.7);
-  
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 3;
-  
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  .mensaje_modal{
-      background: #fff;
-      box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
-      width: 400px;
-      padding: 30px 20px 15px;
-  }
-  
-  .mensaje_modal h3{
-      text-align: center;
-      font-family: 'Ubuntu';
-      font-size: 20px;
-      font-weight: 400;
-  }
-  
-  .mensaje_modal h3:after{
-      content: '';
-      display: block;
-      width: 100%;
-      height: 1px;
-      background: #C5C5C5;
-      margin: 10px 0px 15px;
-  }
-  
-  .mensaje_modal p{
-      font-size: 16px;
-      color: #606060;
-  }
-  
-  .mensaje_modal p:before{
-      content: "\f00d";
-      font-family: FontAwesome;
-      display: inline-block;
-      color: #E25151;
-      margin-right: 8px;
-  }
-  
-  .mensaje_modal .btn_close{
-      display: inline-block;
-      padding: 3px 10px;
-      margin-top: 10px;
-      
-      background: #E25151;
-      color: #fff;
-      border: 2px solid #B14141; 
-      cursor: pointer;
-  
-      float: right;
-  }
-
-
-  /* VALIDAR FECHA NACIMIENTO */
-
-  label {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
- 
-.box-blue {
-    margin:0 0 25px;
-    overflow:hidden;
-    padding:10px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    font-size : 18px;
-}
- 
-.box-blue {
-    background-color:#eff5f7;
-    border:2px solid #afcde3;
-}
-
-.box-blue:hover {
-  background-color: #ffffff;
-  border: 2px solid #fadf98;
-}
-
-.box-blue:active {
-  background-color: #ffffff;
-  border: 2px solid #fadf98;
-}
-
-.Mensaje .MensajeNom{
-  background-color: #f9dbdb;
+button[type="submit"] {
+  font-family: "Lato", sans-serif;
+  background: #43b1aa;
+  color: #fff;
+  border: 0 none;
+  display: block;
+  padding: 0.5em 0;
   width: 100%;
-  padding:8px;
-  text-align: center;
-  border: 1px solid #e9b3b3;
-  color:#f4092d;
-  font-weight: bold;
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
-  
+  font-size: 2em;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+button[type="submit"]:hover {
+  background: #249991;
+  color: #ccc;
 }
 
-.Mensaje1 {
-  background-color: #d9edc2;
-  with: 100%;
-  padding:8px;
+fieldset {
+  border: 1px solid #d8d8d8;
+  margin: 0 0 0.65em;
+  position: relative;
+}
+fieldset span {
+  color: #d8d8d8;
+  font-size: 1.2em;
   text-align: center;
-  border: 1px solid #b2ce96;
-  color:#1bbc18;
-  font-weight: bold;
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
+  padding: 0.9em 0 0;
+  width: 10% !important;
+  float: left;
+}
+fieldset span.error {
+  padding: 0;
+  width: auto;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  float: left;
+  font-family: "Lato", sans-serif;
+  font-size: 1.4em;
+  line-height: 1;
+  border: 0px solid transparent;
+  width: 90%;
+  height: 2.6em;
+  line-height: 100%;
+  font-weight: 300%;
+}
+input:focus {
+  color: #042422;
+}
+input + span:after {
+  display: none;
+}
+
+input:required {
+  border-right: 5px solid #fff;
+}
+
+input:invalid:focus {
+  border-right: 5px solid #da4e3b;
+}
+input:invalid:focus + span:after {
+  width: 250px;
+  display: block;
+  background: #da4e3b;
+  color: #fff;
+  padding: 0.6em 2em;
+  position: absolute;
+  top: 0;
+  right: -92%;
+}
+input:invalid:focus + span:before {
+  content: "◂";
+  position: absolute;
+  font-size: 2em;
+  line-height: 1;
+  color: #da4e3b;
+  z-index: 2;
+  top: 8%;
+  right: -8%;
+}
+
+input[type="email"]:invalid:focus + span:after {
+  content: "A good ol' @provider.com address ;)";
+}
+
+input[type="password"]:invalid:focus + span:after {
+  content: "And, please, not your cat's name :)";
+}
+
+input:valid:focus {
+  border-right: 5px solid #a9db48;
+}
+input:valid:focus + span:after {
+  width: 250px;
+  display: block;
+  background: #a9db48;
+  color: #fff;
+  padding: 0.6em 2em;
+  position: absolute;
+  top: 0;
+  right: -92%;
+}
+input:valid:focus + span:before {
+  content: "◂";
+  position: absolute;
+  font-size: 2em;
+  line-height: 1;
+  color: #a9db48;
+  z-index: 2;
+  top: 8%;
+  right: -8%;
+}
+
+input[type="email"]:valid:focus + span:after {
+  content: "You're ready for the next step !";
+}
+
+input[type="password"]:valid:focus + span:after {
+  content: "Thats a nice one !";
+}
+
+.m-list--other-sign-in li {
+  float: left;
+}
+.m-list--other-sign-in a {
+  width: 150px;
+  height: 100px;
+  line-height: 100px;
+  color: #bccccb;
+  font-size: 2em;
+  text-decoration: none;
+  display: block;
+  background: #ebe5e4;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+.m-list--other-sign-in a:hover {
+  background: #c7d0d0;
+  color: #43b1aa;
+}
+.m-list--other-sign-in span {
+  display: none;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+  font-size: 1em;
+  font-family: "Lato", sans-serif;
+}
+
+::-webkit-validation-bubble {
+  display: none;
 }
