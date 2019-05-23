@@ -4,16 +4,9 @@
     session_start();
     if (isset($_SESSION['id']))
         $id=$_SESSION['id'];
-    if($_SESSION["rol"] != "admin")
+    if($_SESSION["rol"] != "user")
         header("Location: logout.php");
-    $idUsuario = $_REQUEST['id'];
-    $sqlAdmin = "SELECT * FROM usuario WHERE usu_id = $id";
-    $resultAdmin=$conn->query($sqlAdmin);
-    $rowAdmin= mysqli_fetch_assoc($resultAdmin);
-    $nombresAdmin=$rowAdmin['usu_nombres'];
-    $apellidosAdmin=$rowAdmin['usu_apellidos'];
-    $fotoAdmin=$rowAdmin['usu_foto_perfil'];
-    $sqlUsuario = "SELECT * FROM usuario WHERE usu_id=$idUsuario";
+    $sqlUsuario = "SELECT * FROM usuario WHERE usu_id=$id";
     $resultUsuario=$conn->query($sqlUsuario);
     $rowUsuario= mysqli_fetch_assoc($resultUsuario);
     
@@ -21,26 +14,19 @@
     $apellidos=$rowUsuario['usu_apellidos'];
     $foto=$rowUsuario['usu_foto_perfil'];
     $correo=$rowUsuario['usu_correo'];
-    $eliminado=$rowUsuario['usu_eliminado'];
-    $rol=$rowUsuario['usu_rol'];
     if (!empty($_POST)) {
         if (empty($_POST['idusuario'])) {
             header("location: index.php");
         }
         $nNombres = isset($_POST["nombres"]) ? mb_strtoupper(trim($_POST["nombres"]), 'UTF-8') : null; 
         $nApellidos = isset($_POST["apellidos"]) ? mb_strtoupper(trim($_POST["apellidos"]), 'UTF-8') : null;        
-        $nCorreo = isset($_POST["correo"]) ? trim($_POST["correo"]): null;
-        //$nContrasena = isset($_POST["contrasena"]) ? trim($_POST["contrasena"]): null;
-        $nRol = isset($_POST["rol"]) ? trim($_POST["rol"]): null;
-        $nEliminado = isset($_POST["eliminado"]) ? trim($_POST["eliminado"]): null;
+        $nCorreo = isset($_POST["correo"]) ? trim($_POST["correo"]): null; 
             
         $sql2 = "UPDATE usuario SET usu_nombres = '$nNombres',
-                                    usu_apellidos = '$nApellidos', 
-                                    usu_correo = '$nCorreo';                                
-                                    usu_rol = '$nRol',
-                                    usu_eliminado = '$nEliminado',
-                                    usu_fecha_modificacion = SYSDATE()
-                                WHERE usu_id = $idUsuario";
+                                    usu_apellidos = '$nApellidos',
+                                    usu_correo = '$nCorreo',
+                                    usu_fecha_modificacion = SYSDATE() 
+                                WHERE usu_id = $id";
     
         if ($conn->query($sql2) === TRUE) {             
             echo "Modificado Correctamente";                  
@@ -59,37 +45,36 @@
     <meta charset="UTF-8">
     <script type="text/javascript" src="../js/validacion.js"></script>
     <title>Correo: <?php echo $nombres ?> <?php echo $apellidos ?> </title> 
-    <link rel="stylesheet" href="../vista/CSS/general.css" type="text/css"/>
+    <link rel="stylesheet" href="../vista/CSS/gen.css" type="text/css"/>  
 </head> 
 <body> 
  
-    <table class="menu"> 
+    <table class="menu" style="width:50%"> 
 
         <tr> 
             <th><a href="index.php">Inicio</a></th>  
-            <th><a href="usuarios.php">Usuarios</a></th>
-            <link rel="stylesheet" href="../../public/vista/CSS/gen.css" type="text/css"/>  
+            <th><a href="nuevo.php">Nuevo Mensaje</a></th> 
+            <th><a href="enviados.php">Mensajes Enviados</a></th>
+            <th><a href="perfil.php">Mi Cuenta</a></th>
+            <th><a href="logout.php">Cerrar Sesión</a></th>             
         </tr>
 
     </table>
 
     <div class="img">
-        <img src="<?php echo $fotoAdmin ?>">
+        <img src="<?php echo $foto ?>">
         <br>
-        <span> <?php echo $nombresAdmin ?> <?php echo $apellidosAdmin ?> </span>
+        <span> <?php echo $nombres ?> <?php echo $apellidos ?> </span>
     </div>
 
     <section>
 
         <h2 class="center"> Modificar: </h2>
+        <br>
 
         <div class="center">
             <form id="formulario01" method="POST" onsubmit="return validarCamposObligatorios()" action=""> 
-
-                <img id="fusu" src="<?php echo $foto ?>">
-                <br>
-                <br>
-
+ 
                 <label for="nombres">Nombres:</label> 
                 <input type="text" id="nombres" name="nombres" value="<?php echo $nombres; ?>" placeholder="Ingrese sus dos nombres ..."> 
                 <br> 
@@ -101,18 +86,9 @@
                 <label for="correo">Correo electrónico:</label> 
                 <input type="email" id="correo" name="correo" value="<?php echo $correo; ?>" placeholder="Ingrese su correo electrónico ..."> 
                 <br>
-
-                <label for="rol">rol:</label> 
-                <input type="text" id="rol" name="rol" value="<?php echo $rol; ?>" placeholder="user o admin..."> 
-                <br>
-
-                <label for="eliminado">Eliminado:</label> 
-                <input type="number" id="eliminado" name="eliminado" value="<?php echo $eliminado; ?>" placeholder="0 o 1..."> 
-                <br>
  
                 <input type="hidden" name="idusuario" value="<?php echo $id; ?>">
                 <input type="submit" value="Modificar" >
-                <a href="contrasena.php?id=<?php echo $idUsuario ?>"> Cambiar Contraseña </a>
 
         </form>     
         </div>
@@ -125,13 +101,6 @@
 
     </section>
 
-    <footer>
-        &#8226; &nbsp; Tatiana Domenica Cardenas Jho &nbsp; &#8226; 
-        &nbsp; Universidad Politécnica Salesiana &nbsp; &#8226;
-        <a href="mailto:tcardenasj@est.ups.edu.ec">tcardenasj@est.ups.edu.ec</a> &nbsp; &#8226;
-        <a href="tel:+593998301194">(099) 983-1194</a> &#8226;
-        <br>
-        &#8226; &nbsp; &#9400; Todos los derechos reservados. &nbsp; &#8226;
-    </footer>
+ 
 </body> 
 </html> 
