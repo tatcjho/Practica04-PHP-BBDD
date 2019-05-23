@@ -1,0 +1,201 @@
+@import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+
+body {
+	margin:0;
+	font-family:arial,tahoma,sans-serif;
+	font-size:12px;
+	font-weight:normal;
+
+}
+
+h1{
+    font-family: 'Satisfy', cursive;
+    font-size: 35px;
+    text-align: center;
+
+}
+
+h4{
+    font-family: 'Satisfy', cursive;
+    font-size: 35px;
+    text-align: center;
+}
+
+
+form {
+	margin-left: 35%;
+	padding:30px;
+	width:400px;
+	height:auto;
+	overflow:hidden;
+	background:white;
+	border-radius:10px;
+}
+
+form label {
+	font-size:14px;
+	color:darkgray;
+	cursor:pointer;
+}
+
+form label,
+form input {
+	float:left;
+	clear:both;
+}
+
+form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+form input[type=text]:focus,
+form input[type="password"]:focus {
+	border-color:cornflowerblue;
+}
+
+input[type=submit] {
+	padding:15px 50px;
+	width:auto;
+	background:#1abc9c;
+	border:none;
+	color:white;
+	cursor:pointer;
+	display:inline-block;
+	clear:right;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+button[type=reset]:hover {
+	opacity:0.8;
+}
+
+button[type="reset"]:active {
+	opacity:0.4;
+}
+
+button[type=reset] {
+	padding:15px 50px;
+	width:auto;
+	background:#1abc9c;
+	border:none;
+	color:white;
+	cursor:pointer;
+	display:inline-block;
+	clear:right;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+#crear{
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 50px;
+    background-color: mediumpurple;
+    color: antiquewhite;
+
+
+}
+
+#cancelar{
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 50px;
+	background-color: lightpink;
+
+}
+
+button[type=reset]:hover {
+	opacity:0.8;
+}
+
+button[type="reset"]:active {
+	opacity:0.4;
+}
+
+
+.forgot,
+.register {
+	margin:10px;
+	float:left;
+	clear:left;
+	display:inline-block;
+	color:cornflowerblue;
+	text-decoration:none;
+}
+
+.forgot:hover,
+.register:hover {
+	color:darkgray;
+}
+
+#logo {
+	margin:0 auto;
+	width:200px;
+	font-family:'Lily Script One', cursive;
+	font-size:60px;
+	font-weight:bold;
+	text-align:center;
+	color:lightgray;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+#logo:hover {
+	color:cornflowerblue;
+}
+
+
+.legend{
+margin: 0px;
+padding-inline-end: 25px;
+background-color: blueviolet;
+width: 350px;
+height: 50px;
+color: white;
+padding-inline-end: 50px;
+border-radius: 15px;
+
+
+  }
+
+  .legend1{
+    margin: 0px;
+    padding-inline-end: 25px;
+    background-color: lightsalmon;
+    width: 350px;
+    height: 50px;
+    color: white;
+
+    padding-inline-end: 50px;
+    border-radius: 15px;
+    
+    
+      }
