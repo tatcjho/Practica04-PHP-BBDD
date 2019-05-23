@@ -18,7 +18,8 @@
 <head>     
     <meta charset="UTF-8"> 
     <title>Correo: <?php echo $nombres ?> <?php echo $apellidos ?> </title> 
-    <link rel="stylesheet" href="../../public/vista/styles/style.css" type="text/css"/>
+    <link rel="stylesheet" href="../../public/vista/CSS/general.css" type="text/css"/>  
+
 </head> 
 <body>
     
@@ -27,7 +28,7 @@
         <tr> 
             <th><a href="index.php">Inicio</a></th>  
             <th><a href="usuarios.php">Usuarios</a></th>
-            <th><a href="../../public/controladores/logout.php">Cerrar Sesión</a></th>             
+            <link rel="stylesheet" href="../../public/vista/CSS/gen.css" type="text/css"/>  
         </tr>
 
     </table>
@@ -76,6 +77,7 @@
                
                 while($row = $resultMsg->fetch_assoc()) {  
                     
+                    
                     $rem = $row['usuario_usu_id_de'];
                     $sqlRem = "SELECT * FROM usuario WHERE usu_id = $rem";
                     $resultRem = $conn->query($sqlRem);
@@ -87,6 +89,8 @@
                     $resultDest = $conn->query($sqlDest);
                     $rowDest = mysqli_fetch_assoc($resultDest);
                     $correoDest = $rowDest['usu_correo'];
+
+                    
                     echo "<tr id='bandeja'>";   
                         echo "<td>" . $row['men_fecha'] . "</td>";               
                         echo "<td>" . $correoRem . "</td>";
@@ -112,13 +116,12 @@
     <br>
 
     <footer>
-        &#8226; &nbsp; Pedro Jose Ortiz Solis &nbsp; &#8226; 
+        &#8226; &nbsp; Tatiana Domenica Cardenas Jho &nbsp; &#8226; 
         &nbsp; Universidad Politécnica Salesiana &nbsp; &#8226;
-        <a href="mailto:portizs2@est.ups.edu.ec">portizs2@est.ups.edu.ec</a> &nbsp; &#8226;
-        <a href="tel:+593991936486">(099) 193-6486</a> &#8226;
+        <a href="mailto:tcardenasj@est.ups.edu.ec">tcardenasj@est.ups.edu.ec</a> &nbsp; &#8226;
+        <a href="tel:+593998301194">(099) 983-1194</a> &#8226;
         <br>
         &#8226; &nbsp; &#9400; Todos los derechos reservados. &nbsp; &#8226;
     </footer>
-
 </body> 
 </html> 
