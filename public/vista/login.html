@@ -4,19 +4,43 @@
     <meta charset="UTF-8"> 
     <script type="text/javascript" src="../js/validacion.js"></script>
     <link rel="stylesheet" href="styles/style.css" type="text/css"/>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css" />
+
+
     <title>Iniciar sesión</title>
 </head> 
     <body> 
+            
+        <section class="m-box--sign-in" role="main">
+            <header class="m-box--box-sized">
+                <h1>
+                    Sign In <span>or <a href="crear_usuario.html">sign up </a></span>
+                    </h1>
+                    <a class="m-link--close" href="#">x </a>
+            </header>
+
+
         <a href='crear_usuario.html'>No tienes una cuenta? ir a Crear Cuenta</a>  
         <br>       
-        <form id="formulario01" method="POST" onsubmit="return validarCamposObligatorios()" action="../controladores/login.php"> 
-            <label for="correo">Correo electrónico </label> 
-            <input type="text" id="correo" name="correo" value="" placeholder="Ingrese el correo ..."/> 
-            <br> 
+        
+        <form id="formulario01" class="m-form--sign-in" method="POST" onsubmit="return validarCamposObligatorios()" action="../controladores/login.php"> 
+            
+            <fieldset>
+                   
+                    <input type="text" id="correo" name="correo" value="" placeholder="Email"/> 
+                    <br>
+            </fieldset>
+            
              
-            <label for="nombres">Constraseña (*)</label> 
-            <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña ..."/> 
-            <br> 
+            <fieldset>
+                  
+                    <input type="password" id="contrasena" name="contrasena" value="" placeholder="Constraseña"/> 
+                    <br> 
+            </fieldset>
+           
              
             <input type="submit" id="login" name="login" value="Iniciar Sesión" /> 
                      
